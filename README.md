@@ -10,6 +10,10 @@ To install Flask:
 
     pip install Flask
 
+To run from the command line:
+
+    python todo_api.py
+
 # API documentation
 
 ## Create a new to-do item
