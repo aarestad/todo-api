@@ -28,6 +28,15 @@ def close_connection(ex):
         db.close()
 
 
+class TodoItem(object):
+    def __init__(self, username, description, due_date, item_id=None, completed=False):
+        self.id = item_id
+        self.username = username
+        self.description = description
+        self.due_date = due_date
+        self.completed = bool(completed)
+
+
 def save_todo_item(todo_item):
     db = get_db()
     cursor = db.cursor()
@@ -82,23 +91,9 @@ def find_todo_items_by_username(username, only_incomplete=False):
     return todo_items
 
 
-class TodoItem(object):
-    def __init__(self, item_id, username, description, due_date, completed):
-        self.id = item_id
-        self.username = username
-        self.description = description
-        self.due_date = due_date
-        self.completed = bool(completed)
-
-    @staticmethod
-    def from_dict(todo_dict):
-        return TodoItem(todo_dict.get('id', None), todo_dict['username'], todo_dict['description'],
-                        todo_dict['due_date'], todo_dict.get('completed', False))
-
-
 @app.route('/todo-api/v1/todo/', methods=['POST'])
 def new_todo():
-    new_todo_item = TodoItem.from_dict(request.json)
+    new_todo_item = TodoItem(**request.json)
     new_todo_item = save_todo_item(new_todo_item)
     return json.jsonify(new_todo_item.__dict__), 201
 
