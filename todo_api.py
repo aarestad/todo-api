@@ -90,15 +90,6 @@ class TodoItem(object):
         self.due_date = due_date
         self.completed = bool(completed)
 
-    def as_map(self):
-        return {
-            'id': self.id,
-            'username': self.username,
-            'description': self.description,
-            'due_date': self.due_date,
-            'completed': self.completed
-        }
-
     @staticmethod
     def from_dict(todo_dict):
         return TodoItem(todo_dict.get('id', None), todo_dict['username'], todo_dict['description'],
@@ -109,7 +100,7 @@ class TodoItem(object):
 def new_todo():
     new_todo_item = TodoItem.from_dict(request.json)
     new_todo_item = save_todo_item(new_todo_item)
-    return json.jsonify(new_todo_item.as_map()), 201
+    return json.jsonify(new_todo_item.__dict__), 201
 
 
 @app.route('/todo-api/v1/todo/<todo_id>/complete', methods=['POST'])
@@ -121,12 +112,12 @@ def todo_item_complete(todo_id):
 
     existing_todo_item.completed = True
     save_todo_item(existing_todo_item)
-    return json.jsonify(existing_todo_item.as_map())
+    return json.jsonify(existing_todo_item.__dict__)
 
 
 @app.route('/todo-api/v1/todos/<username>/')
 def todos_for_user(username):
-    todo_items = [todo_item.as_map() for todo_item in find_todo_items_by_username(username)]
+    todo_items = [todo_item.__dict__ for todo_item in find_todo_items_by_username(username)]
 
     if len(todo_items) == 0:
         return 'No todo items found for %s' % (username,), 404
@@ -136,7 +127,7 @@ def todos_for_user(username):
 
 @app.route('/todo-api/v1/todos/<username>/uncompleted')
 def uncompleted_todos_for_user(username):
-    uncompleted_todo_items = [todo_item.as_map() for todo_item in find_todo_items_by_username(username, True)]
+    uncompleted_todo_items = [todo_item.__dict__ for todo_item in find_todo_items_by_username(username, True)]
 
     if len(uncompleted_todo_items) == 0:
         return 'No uncompleted todo items found for %s' % (username,), 404
