@@ -29,7 +29,7 @@ Method: POST
     {
       "username":"peter",
       "description":"Get the milk",
-      "due_date": 1438776000 # Unix-style timestam
+      "due_date": 1438776000 # Unix-style timestamp
     }
 
 ### Response
