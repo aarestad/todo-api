@@ -88,7 +88,7 @@ class TodoItem(object):
         self.username = username
         self.description = description
         self.due_date = due_date
-        self.completed = completed
+        self.completed = bool(completed)
 
     def as_map(self):
         return {
@@ -109,7 +109,7 @@ class TodoItem(object):
 def new_todo():
     new_todo_item = TodoItem.from_dict(request.json)
     new_todo_item = save_todo_item(new_todo_item)
-    return json.jsonify(new_todo_item.as_map())
+    return json.jsonify(new_todo_item.as_map()), 201
 
 
 @app.route('/todo-api/v1/todo/<todo_id>/complete', methods=['POST'])
@@ -134,14 +134,14 @@ def todos_for_user(username):
     return json.jsonify({"todo_items": todo_items})
 
 
-@app.route('/todo-api/v1/todos/<username>/incomplete')
-def incomplete_todos_for_user(username):
-    incomplete_todo_items = [todo_item.as_map() for todo_item in find_todo_items_by_username(username, True)]
+@app.route('/todo-api/v1/todos/<username>/uncompleted')
+def uncompleted_todos_for_user(username):
+    uncompleted_todo_items = [todo_item.as_map() for todo_item in find_todo_items_by_username(username, True)]
 
-    if len(incomplete_todo_items) == 0:
-        return 'No incomplete todo items found for %s' % (username,), 404
+    if len(uncompleted_todo_items) == 0:
+        return 'No uncompleted todo items found for %s' % (username,), 404
 
-    return json.jsonify({"incomplete_todo_items": incomplete_todo_items})
+    return json.jsonify({"uncompleted_todo_items": uncompleted_todo_items})
 
 
 if __name__ == '__main__':
