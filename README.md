@@ -44,6 +44,12 @@ Method: POST
 
 HTTP status: 201
 
+If the posted object does not contain the correct fields:
+
+    Invalid todo object
+
+HTTP status: 400
+
 ## Mark a to-do item as completed
 
 ### API endpoint
