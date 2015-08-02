@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a740528-7800-47f3-82aa-28c4a91c1fc1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.db" afterPath="$PROJECT_DIR$/todo.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo_api.py" afterPath="$PROJECT_DIR$/todo_api.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -18,7 +17,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/todo-flask$todo_flask.coverage" NAME="todo-flask Coverage Results" MODIFIED="1438541795247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/todo-flask$todo_flask.coverage" NAME="todo-flask Coverage Results" MODIFIED="1438542103543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -48,14 +47,14 @@
       <file leaf-file-name="todo_api.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5351813">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.9040512">
+              <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding>
                 <element signature="e#23#64#0" expanded="true" />
-                <marker date="1438541896000" expanded="true" signature="865:952" placeholder="INSERT INTO ..." />
-                <marker date="1438541896000" expanded="true" signature="1138:1283" placeholder="UPDATE todo_..." />
-                <marker date="1438541896000" expanded="true" signature="1578:1660" placeholder="SELECT id, u..todo_items..." />
-                <marker date="1438541896000" expanded="true" signature="1951:2039" placeholder="SELECT id, u..todo_items..." />
+                <marker date="1438542093000" expanded="true" signature="865:952" placeholder="INSERT INTO ..." />
+                <marker date="1438542093000" expanded="true" signature="1138:1283" placeholder="UPDATE todo_..." />
+                <marker date="1438542093000" expanded="true" signature="1578:1660" placeholder="SELECT id, u..todo_items..." />
+                <marker date="1438542093000" expanded="true" signature="1951:2039" placeholder="SELECT id, u..todo_items..." />
               </folding>
             </state>
           </provider>
@@ -421,7 +420,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438541097897</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="remove unneded from_dict">
+      <created>1438541905129</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1438541905129</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -470,7 +475,8 @@
     <MESSAGE value="updated README; tweaked api" />
     <MESSAGE value="updated README" />
     <MESSAGE value="use the __dict__builtin instead" />
-    <option name="LAST_COMMIT_MESSAGE" value="use the __dict__builtin instead" />
+    <MESSAGE value="remove unneded from_dict" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unneded from_dict" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -485,10 +491,10 @@
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="e#23#64#0" expanded="true" />
-            <marker date="1438541896000" expanded="true" signature="865:952" placeholder="INSERT INTO ..." />
-            <marker date="1438541896000" expanded="true" signature="1138:1283" placeholder="UPDATE todo_..." />
-            <marker date="1438541896000" expanded="true" signature="1578:1660" placeholder="SELECT id, u..todo_items..." />
-            <marker date="1438541896000" expanded="true" signature="1951:2039" placeholder="SELECT id, u..todo_items..." />
+            <marker date="1438542093000" expanded="true" signature="865:952" placeholder="INSERT INTO ..." />
+            <marker date="1438542093000" expanded="true" signature="1138:1283" placeholder="UPDATE todo_..." />
+            <marker date="1438542093000" expanded="true" signature="1578:1660" placeholder="SELECT id, u..todo_items..." />
+            <marker date="1438542093000" expanded="true" signature="1951:2039" placeholder="SELECT id, u..todo_items..." />
           </folding>
         </state>
       </provider>
@@ -568,14 +574,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todo_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5351813">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.9040512">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
             <element signature="e#23#64#0" expanded="true" />
-            <marker date="1438541896000" expanded="true" signature="865:952" placeholder="INSERT INTO ..." />
-            <marker date="1438541896000" expanded="true" signature="1138:1283" placeholder="UPDATE todo_..." />
-            <marker date="1438541896000" expanded="true" signature="1578:1660" placeholder="SELECT id, u..todo_items..." />
-            <marker date="1438541896000" expanded="true" signature="1951:2039" placeholder="SELECT id, u..todo_items..." />
+            <marker date="1438542093000" expanded="true" signature="865:952" placeholder="INSERT INTO ..." />
+            <marker date="1438542093000" expanded="true" signature="1138:1283" placeholder="UPDATE todo_..." />
+            <marker date="1438542093000" expanded="true" signature="1578:1660" placeholder="SELECT id, u..todo_items..." />
+            <marker date="1438542093000" expanded="true" signature="1951:2039" placeholder="SELECT id, u..todo_items..." />
           </folding>
         </state>
       </provider>

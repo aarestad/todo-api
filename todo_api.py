@@ -93,7 +93,11 @@ def find_todo_items_by_username(username, only_incomplete=False):
 
 @app.route('/todo-api/v1/todo/', methods=['POST'])
 def new_todo():
-    new_todo_item = TodoItem(**request.json)
+    try:
+        new_todo_item = TodoItem(**request.json)
+    except TypeError:
+        return 'Invalid todo object', 400
+
     new_todo_item = save_todo_item(new_todo_item)
     return json.jsonify(new_todo_item.__dict__), 201
 
