@@ -81,14 +81,7 @@ def find_todo_items_by_username(username, only_incomplete=False):
     if only_incomplete:
         query += ' AND completed = 0'
 
-    cursor.execute(query, (username,))
-
-    todo_items = []
-
-    for todo_item_row in cursor:
-        todo_items.append(TodoItem(*todo_item_row))
-
-    return todo_items
+    return [TodoItem(*todo_item_row) for todo_item_row in cursor.execute(query, (username,))]
 
 
 @app.route('/todo-api/v1/todo/', methods=['POST'])
