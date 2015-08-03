@@ -32,13 +32,13 @@ class TodoApiTest(unittest.TestCase):
                          c.execute('SELECT username, description, due_date, id, completed '
                                    'FROM todo_items WHERE id = ?', (new_todo_item.id,)).fetchone())
 
-    def find_todo_item_by_id(self):
+    def test_find_todo_item_by_id(self):
         db = sqlite3.connect(todo_api.DATABASE)
 
         new_todo_item = todo_api.TodoItem('peter', 'Get the milk', 1234567890)
         todo_api.save_todo_item(new_todo_item, db)
 
-        fetched_todo_item = todo_api.find_todo_item_by_id(new_todo_item.id)
+        fetched_todo_item = todo_api.find_todo_item_by_id(new_todo_item.id, db)
 
         self.assertEqual(new_todo_item.id, fetched_todo_item.id)
         self.assertEqual(new_todo_item.username, fetched_todo_item.username)
@@ -65,3 +65,7 @@ class TodoApiTest(unittest.TestCase):
         self.assertEqual(uncompleted.description, 'Get the bread')
         self.assertEqual(uncompleted.due_date, 1234567890)
         self.assertEqual(uncompleted.completed, False)
+
+
+if __name__ == '__main__':
+    unittest.main()
