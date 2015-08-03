@@ -61,22 +61,19 @@ def find_todo_item_by_id(todo_item_id):
     db = get_db()
     cursor = db.cursor()
 
-    cursor.execute('SELECT id, username, description, due_date, completed FROM todo_items where id = ?',
+    cursor.execute('SELECT username, description, due_date, id, completed FROM todo_items where id = ?',
                    (todo_item_id,))
 
     todo_item_row = cursor.fetchone()
 
-    if todo_item_row is None:
-        return None
-
-    return TodoItem(*todo_item_row)
+    return None if todo_item_row is None else TodoItem(*todo_item_row)
 
 
 def find_todo_items_by_username(username, only_incomplete=False):
     db = get_db()
     cursor = db.cursor()
 
-    query = 'SELECT id, username, description, due_date, completed FROM todo_items where username = ?'
+    query = 'SELECT username, description, due_date, id, completed FROM todo_items where username = ?'
 
     if only_incomplete:
         query += ' AND completed = 0'
